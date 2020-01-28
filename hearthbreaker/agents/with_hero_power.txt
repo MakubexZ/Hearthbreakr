@@ -1,0 +1,21 @@
+            
+
+
+        if game_temp.current_player.hero.power.can_use():
+            possible_actions = len(attack_minions) + len(playable_cards) + 1
+        else:
+            possible_actions = len(attack_minions) + len(playable_cards)
+
+
+
+            elif game_temp.current_player.hero.power.can_use() and ac == possible_actions - 2:
+                game_curr = game_temp.copy()
+                action_sequence_curr = copy.deepcopy(action_sequence_temp)
+                game_curr.current_player.hero.power.use()
+                action = ".USE_HERO_POWER"
+                if len(action_sequence_curr) == 0:
+                    action_sequence_curr.append(action)
+                else:
+                    action_sequence_curr[0] += action
+                self.get_action_sequence(game_curr, action_sequence_curr)
+                del game_curr
