@@ -64,8 +64,8 @@ class RootChanceGameState(GameStateBase):
 
 
     def get_starting_hands(self):
-        starting_hands1 = tuple(itertools.combinations(self.game.players[0].deck.cards, 4))
-        starting_hands2 = tuple(itertools.combinations(self.game.players[1].deck.cards, 4))
+        starting_hands1 = tuple(itertools.combinations(self.game.players[0].deck.cards, 5))
+        starting_hands2 = tuple(itertools.combinations(self.game.players[1].deck.cards, 5))
 
         startinghands1 = []
         startinghands2 = []

@@ -50,7 +50,6 @@ def bulid_starting_hands(deck_1, deck_2):
     starting_hands2 = list(itertools.combinations(deck_2.cards, 2))
 
 
-deck1 = load_deck("patron.hsdeck")
 deck2 = load_deck("zoo.hsdeck")
 
 '''
