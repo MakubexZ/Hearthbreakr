@@ -69,6 +69,8 @@ X1 = []
 Y1 = []
 X2 = []
 Y2 = []
+nash1 = []
+nash2 = []
 
 chance_sampling_cfr = ChanceSamplingCFR(root)
 for i in range(100):
@@ -85,7 +87,7 @@ for i in range(100):
     value1 = chance_sampling_cfr.value_of_the_game()
     Y1.append(value1)
     
-nash1 = chance_sampling_cfr.nash_equilibrium
+nash1.append(chance_sampling_cfr.nash_equilibrium)
 file3 = open('pickle_nash1.pickle', 'wb')
 pickle.dump(nash1, file3)
 file3.close()
@@ -112,7 +114,7 @@ for j in range(100):
     Y2.append(value2)
 print('compute')
 
-nash2 = vanilla_cfr.nash_equilibrium
+nash2.append(vanilla_cfr.nash_equilibrium)
 file4 = open('pickle_nash2.pickle', 'wb')
 pickle.dump(nash2, file4)
 file4.close()
