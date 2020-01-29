@@ -87,7 +87,7 @@ for i in range(100):
     
 nash1 = chance_sampling_cfr.nash_equilibrium
 file3 = open('pickle_nash1.pickle', 'wb')
-pickle.dump(data1, file3)
+pickle.dump(nash1, file3)
 file3.close()
 
 
@@ -114,7 +114,7 @@ print('compute')
 
 nash2 = vanilla_cfr.nash_equilibrium
 file4 = open('pickle_nash2.pickle', 'wb')
-pickle.dump(data1, file4)
+pickle.dump(nash2, file4)
 file4.close()
 
 data2 = [X2,Y2]
