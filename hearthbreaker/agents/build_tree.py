@@ -64,8 +64,8 @@ class RootChanceGameState(GameStateBase):
 
 
     def get_starting_hands(self):
-        starting_hands1 = tuple(itertools.combinations(self.game.players[0].deck.cards, 4))
-        starting_hands2 = tuple(itertools.combinations(self.game.players[1].deck.cards, 4))
+        starting_hands1 = tuple(itertools.combinations(self.game.players[0].deck.cards, 5))
+        starting_hands2 = tuple(itertools.combinations(self.game.players[1].deck.cards, 5))
 
         startinghands1 = []
         startinghands2 = []
@@ -105,7 +105,7 @@ class PlayerMoveGameState(GameStateBase):
     def __init__(self, parent, to_move, game, starting_hands, actions_history, n):
         super().__init__(parent=parent, to_move=to_move, game=game, n=n)
 
-        if not game.game_ended and self.n != 6:
+        if not game.game_ended and self.n != 5:
             self.starting_hands = starting_hands
             self.actions_history = actions_history
             self.acseq_state = {}
