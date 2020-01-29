@@ -41,12 +41,12 @@ class Thrall(HeroCard):
 
 class Guldan(HeroCard):
     def __init__(self):
-        super().__init__("Gul'dan", CHARACTER_CLASS.WARLOCK, 6, WarlockPower)
+        super().__init__("Gul'dan", CHARACTER_CLASS.WARLOCK, 3, WarlockPower)
 
 
 class Garrosh(HeroCard):
     def __init__(self):
-        super().__init__("Garrosh Hellscream", CHARACTER_CLASS.WARRIOR, 6, WarriorPower)
+        super().__init__("Garrosh Hellscream", CHARACTER_CLASS.WARRIOR, 3, WarriorPower)
 
 
 class Jaraxxus(HeroCard):
