@@ -78,10 +78,8 @@ for i in range(100):
     chance_sampling_cfr.run(iterations = 10)
     chance_sampling_cfr.compute_nash_equilibrium()
     
-    if i % 9 == 0:
-        theta1 = chance_sampling_cfr.nash_equilibrium
-        nash1.append(theta1)
-        #print(len(chance_sampling_cfr.nash_equilibrium))
+    if i % 99 == 0:
+        print(len(chance_sampling_cfr.nash_equilibrium))
         #for key, value in chance_sampling_cfr.nash_equilibrium.items():
             #print(value)
     # print('already compute nash')
@@ -89,12 +87,7 @@ for i in range(100):
         print("processing", i, "/100")
     value1 = chance_sampling_cfr.value_of_the_game()
     Y1.append(value1)
-    
-
-file3 = open('pickle_nash1.pickle', 'wb')
-pickle.dump(nash1, file3)
-file3.close()
-
+print(chance_sampling_cfr.nash_equilibrium)
 
 data1 = [X1,Y1]
 file1 = open('pickle_chance.pickle', 'wb')
@@ -113,16 +106,13 @@ for j in range(100):
     X2.append(j * 10)
     vanilla_cfr.run(iterations = 5)
     vanilla_cfr.compute_nash_equilibrium()
-    if i % 9 == 0:
-        theta2 = chance_sampling_cfr.nash_equilibrium
-        nash2.append(theta2)
+    if i % 99 == 0:
+        print(len(chance_sampling_cfr.nash_equilibrium))
     value2 = vanilla_cfr.value_of_the_game()
     Y2.append(value2)
-print('compute')
+print(vanilla_cfr.nash_equilibrium)
 
-file4 = open('pickle_nash2.pickle', 'wb')
-pickle.dump(nash2, file4)
-file4.close()
+print('compute')
 
 data2 = [X2,Y2]
 file2 = open('pickle_vanilla.pickle', 'wb')
