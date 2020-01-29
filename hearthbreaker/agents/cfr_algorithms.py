@@ -26,8 +26,9 @@ class CounterfactualRegretMinimizationBase:
     def compute_nash_equilibrium(self):
         self.__compute_ne_rec(self.root)
         # print('nash_equilibrium', self.nash_equilibrium)
+        dat = self.nash_equilibrium
         file = open('pickle_nash.pickle', 'wb')
-        pickle.dump(self.nash_equilibrium, file)
+        pickle.dump(dat, file)
         file.close()
 
     def __compute_ne_rec(self, node):
