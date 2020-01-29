@@ -1,4 +1,5 @@
 from hearthbreaker.agents.cfr_utils import init_sigma, init_empty_node_maps
+import pickle
 
 A = 1
 
@@ -25,6 +26,9 @@ class CounterfactualRegretMinimizationBase:
     def compute_nash_equilibrium(self):
         self.__compute_ne_rec(self.root)
         # print('nash_equilibrium', self.nash_equilibrium)
+        file = open('pickle_nash.pickle', 'wb')
+        pickle.dump(self.nash_equilibrium, file)
+        file.close()
 
     def __compute_ne_rec(self, node):
         if node.is_terminal():

@@ -49,7 +49,7 @@ def bulid_starting_hands(deck_1, deck_2):
     starting_hands1 = list(itertools.combinations(deck_1.cards, 2))
     starting_hands2 = list(itertools.combinations(deck_2.cards, 2))
 
-
+deck1 = load_deck("patron.hsdeck")
 deck2 = load_deck("zoo.hsdeck")
 
 '''
@@ -58,7 +58,7 @@ for i in range(len(deck1.cards)):
     print(deck1.cards[i].name)
 '''
 
-game1 = Game([deck2, deck2], [RandomAgent(), RandomAgent()])
+game1 = Game([deck1, deck2], [RandomAgent(), RandomAgent()])
 
 root = build_tree.RootChanceGameState(game1)
 
@@ -92,7 +92,7 @@ file1.close()
 
 
 print('Vanilla')
-game2 = Game([deck2, deck2], [RandomAgent(), RandomAgent()])
+game2 = Game([deck1, deck2], [RandomAgent(), RandomAgent()])
 root = build_tree.RootChanceGameState(game2)
 vanilla_cfr = VanillaCFR(root)
 for j in range(100):
